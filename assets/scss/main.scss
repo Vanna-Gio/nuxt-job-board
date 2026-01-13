@@ -2,3 +2,25 @@ body {
     font-family: system-ui, sans-serif;
     margin: 0;
 }
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1;
+    padding: 1rem;
+}
+.header {
+    background: #111;
+    padding: 1rem;
+}
+.nav a {
+    color: #fff;
+    margin-right: 1rem;
+}
+.footer {
+    background: #f5f5f5;
+    text-align: center;
+    padding: 1rem;
+}
