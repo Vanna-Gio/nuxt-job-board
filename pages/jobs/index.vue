@@ -19,11 +19,15 @@
 import { useJobStore } from '~/stores/job';
 
 useHead({
-  title: 'Job Listings | Nuxt Job Board',
+  title: 'Job Listings',
   meta: [
     {
       name: 'description',
       content: 'Browse frontend jobs built with Nuxt and Vue.'
+    },
+    {
+        property: 'og:title',
+        content: 'Frontend Job Listings'
     }
   ]
 })

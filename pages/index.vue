@@ -10,7 +10,7 @@
 </template>
  <script setup>
         useHead({
-            title: 'Frontend Jobs | Nuxt Job Board',
+            title: 'Frontend Jobs',
             meta: [
                 {
                     name: 'description',

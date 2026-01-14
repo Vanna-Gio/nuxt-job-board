@@ -27,6 +27,15 @@ useHead({
       content: job.value
         ? job.value.body.slice(0, 150)
         : 'Job details page'
+    },
+    {
+      property: 'og:title',
+      content: job.value ? job.value.title: 'job Detail'
+    },
+    {
+      property: 'og:description',
+      content: job.value ? job.value.body.slice(0, 150)
+      : 'Job details page'
     }
   ]
 })
