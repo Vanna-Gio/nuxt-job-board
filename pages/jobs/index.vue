@@ -16,6 +16,8 @@
     </section>
 </template>
 <script setup>
+import { useJobStore } from '~/stores/job';
+
 useHead({
   title: 'Job Listings | Nuxt Job Board',
   meta: [
@@ -26,7 +28,12 @@ useHead({
   ]
 })
 
-    const { data: jobs, pending, error } = await useAsyncData('jobs', () =>
-        $fetch('https://jsonplaceholder.typicode.com/posts')
-    )
+const jobStore = useJobStore()
+
+const { data, pending, error } = await useAsyncData('jobs', async () => {
+    await jobStore.fetchJobs()
+    return jobStore.jobs
+})
+
+const jobs = computed(() => data.value || [])
 </script>
