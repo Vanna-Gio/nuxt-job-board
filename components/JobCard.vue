@@ -5,7 +5,13 @@
             View details
         </NuxtLink>
 
-        <button @click="save">Save</button>
+        <button
+            @click="save"
+            :disabled="isSaved"
+            >
+            {{ isSaved ? 'Saved' : 'Save' }}
+        </button>
+
     </article>
 </template>
 
@@ -21,7 +27,8 @@ import { useJobStore } from '~/stores/job';
 
     const jobStore = useJobStore()
 
-    const save =() => {
-        jpbStore.saveJob(props.job)
-    }
+    const isSaved = computed(() =>
+        jobStore.savedJobs.some(j => j.id === props.job.id)
+    )
+
 </script>

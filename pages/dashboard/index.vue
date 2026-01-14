@@ -4,6 +4,9 @@
         <p v-if="useAuthStore.user">
             Logged in as {{ useAuthStore.user.email }} 
         </p>
+        <nav>
+            <NuxtLink to="/dashboard/saved">Saved Jobs</NuxtLink>
+        </nav>
         <button @click="logout">Logout</button>
     </section>
 </template>
